@@ -1,5 +1,10 @@
 import React from 'react'
-// import Logo from '../../assets/images/logo.png';
+import Logo from '../../assets/images/icons/logo.png';
+import Facebook from '../../assets/images/icons/facebook.svg'
+import Instagram from '../../assets/images/icons/instagram.svg'
+import Youtube from '../../assets/images/icons/youtube.svg'
+import Email from '../../assets/images/icons/email.png'
+import Phone from '../../assets/images/icons/phone.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import { faTruck,faCreditCard,faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 
@@ -8,70 +13,54 @@ const Footer = () => {
     <footer className='py-5'>
         <div className="container">
             <div className="row mb-5">
-                <div className="col-md-3 pb-4 text-white">
-                    {/* <img src={Logo} width={70} alt="" /> */}
-                    <div className='pt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                </div>
-                <div className="col-md-3 pb-4">
-                    <h2 className='mb-3'>Categories</h2>
-                    <ul>
+                <div className="col-md-4 pb-4">
+                    <ul> 
                         <li>
-                            <a href="">Kids</a>
+                            <a href="">About Us</a>
                         </li>
                         <li>
-                            <a href="">Men</a>
+                            <a href="">Delivery Information</a>
                         </li>
                         <li>
-                            <a href="">Women</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-md-3 pb-4">
-                    <h2 className='mb-3'>Quick Links</h2>
-                    <ul>
-                        <li>
-                            <a href="">Login</a>
+                            <a href="">Returns & Exchange</a>
                         </li>
                         <li>
-                            <a href="">Register</a>
+                            <a href="">Technical & Privacy</a>
+                        </li>
+                        <li>
+                            <a href="">Order Status</a>
                         </li>
                     </ul>
                 </div>
-                <div className="col-md-3 pb-4">
-                    <h2 className='mb-3'>Get In Touch</h2>
-                    <ul>
+                <div className="col-md-4 pb-4 text-center">
+                    <img src={Logo} width={100} alt="" />
+                    <ul className='mt-5'>
                         <li>
-                            <a href="">+91-91XXXXXXX</a>
+                            <a href="">Stay in touch with us</a>
                         </li>
-                        <li>
-                            <a href="">info@example.com</a>
+                        <li className='d-flex social-icons justify-content-center gap-3'>
+                            <span><a href=""><img src={Facebook} alt="" /></a></span>
+                            <span><a href=""><img src={Instagram} alt="" /></a></span>
+                            <span><a href=""><img src={Youtube} alt="" /></a></span>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div className="row spotlite py-5">
-                <div className="col-md-4">
-                    <div className="d-flex justify-content-center py-2">
-                        {/* <FontAwesomeIcon icon={faTruck} className='text-white px-2 my-1' /> */}
-                        <h3>Free Delivery</h3>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="d-flex justify-content-center py-2">
-                        {/* <FontAwesomeIcon icon={faCreditCard } className='text-white px-2 my-1' /> */}
-                        <h3>Money Back Guarantee</h3>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="d-flex justify-content-center py-2">
-                        {/* <FontAwesomeIcon icon={faMoneyBill} className='text-white px-2 my-1' /> */}
-                        <h3>Secure Payments</h3>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-12">
-                    <p className='text-white text-center p-5'>&copy; 2025 All Rights Reserved</p>
+                <div className="col-md-4 pb-4">
+                    <h4 className='mb-3'>Our Corporate Office</h4>
+                    <ul className='gap-3 d-grid'>
+                        <li className='d-grid'>
+                            <span>No: 7,A2B road, Adyar Rajpuram,</span>
+                            <span>T-Nagar, Chennai - 642002.</span>
+                        </li>
+                        <li className='d-grid'>
+                            <div className="d-flex gap-2">
+                                <img src={Email} alt="" height={15} /><span>sales@madeup.com</span>
+                            </div>
+                            <div className="d-flex gap-2">
+                                <img src={Phone} alt="" height={15} /><span>044 9999 9999</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
