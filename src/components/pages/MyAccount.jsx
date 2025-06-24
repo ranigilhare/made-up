@@ -11,7 +11,7 @@ const MyAccount = () => {
     <>
         <Layout>
             <div className="container profile-details">
-                <div className="row">
+                <div className="row breadcrumb-section">
                     <div className="col-md-12">
                         <nav aria-label="breadcrumb" className="py-4">
                             <ol className="breadcrumb">
@@ -21,10 +21,7 @@ const MyAccount = () => {
                         </nav>
                     </div>
                 </div>
-                {/* <div className="dashboard"> */}
-                    <Sidebar/>
-                    {/* {children} */}
-                {/* </div> */}
+                <Sidebar/>
             </div>            
         </Layout>
     </>

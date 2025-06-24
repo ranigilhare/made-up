@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../../assets/images/icons/logo.png';
@@ -9,6 +9,7 @@ import AccountMenuModal from '../modals/AccountMenuModal';
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className='shadow'>
@@ -60,9 +61,11 @@ const Header = () => {
                         <Link to="" className='ms-2'>
                             <FontAwesomeIcon icon="shopping-cart"  className="ms-auto"/>
                         </Link>
-                        <Link to="" className='ms-2'>
-                            <FontAwesomeIcon icon="heart"  className="ms-auto"/>
-                        </Link>
+                        {(location.pathname === '/my-profile' || location.pathname === '/my-orders') && (
+                            <Link to="" className='ms-2'>
+                                <FontAwesomeIcon icon="heart"  className="ms-auto"/>
+                            </Link>
+                        )}
                         <Link to="" className='ms-2' onClick={() => setIsModalOpen(true)} >
                             <FontAwesomeIcon icon="user"  className="ms-auto"/>
                         </Link>

@@ -1,12 +1,7 @@
-import { useState } from 'react'
-// import './App.css'
+import { React } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/pages/Home';
-// import MyProfile from './components/pages/MyProfile';
-import MyOrders from './components/pages/MyOrders';
-import MyProfile from './components/pages/MyProfile';
 import MyAccount from './components/pages/MyAccount';
-import Sidebar from './components/common/Sidebar';
 
 function App() {
 

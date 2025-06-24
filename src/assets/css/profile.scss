@@ -1,8 +1,14 @@
+/* Profile styles */
 .profile-section {
   flex: 1;
   padding: 40px 30px;
   border: 1px solid #000;
   margin-bottom: 50px;
+  @media (max-width: 769px) {
+    border: none;
+    padding: 40px 10px;
+    margin-bottom: 20px;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -14,6 +20,18 @@
     @media (max-width: 769px) {
       div:last-child {
         text-align: center !important;
+      }
+    }
+    @media (max-width: 500px) {
+      .form-row {
+        display: grid !important;
+      }
+      .text-end {
+        text-align: center !important;
+        margin-top: 1em !important;
+        .button {
+          width: 100%;
+        }
       }
     }
   }

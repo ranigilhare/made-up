@@ -39,7 +39,6 @@ const Home = () => {
                 <div className='col-md-6 pe-md-2 position-relative' style={{
                   backgroundImage: `url(${HeroTwoImage})`,
                   height: '700px',
-                  // width: '50%',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover'
                   }}>
@@ -57,7 +56,6 @@ const Home = () => {
                       backgroundImage: `url(${HeroOneImage})`,
                       backgroundRepeat: 'no-repeat',
                       backgroundSize: 'cover',
-                      // backgroundPosition: 'center',
                     }}
                   >
                     <div className="hero-text text-five">
@@ -70,7 +68,6 @@ const Home = () => {
                       backgroundImage: `url(${HeroTwoImage})`,
                       backgroundRepeat: 'no-repeat',
                       backgroundSize: 'cover',
-                      // backgroundPosition: 'center',
                     }}
                   >
                     <div className="hero-text text-six">
@@ -87,7 +84,6 @@ const Home = () => {
               <div className='row g-0 position-relative' style={{
                 backgroundImage: `url(${NewsletterImage})`,
                 height: '300px',
-                // width: '100%',
                 maxWidth: '100%',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',

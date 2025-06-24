@@ -14,11 +14,11 @@ export default function AccountMenuModal({ isOpen, onClose }) {
           <h4 className="section-title">MY PROFILE</h4>
           <ul>
             <li>
-                <Link to="/my-profile">My Profile</Link>
+                <Link to="/my-profile" onClick={onClose}>My Profile</Link>
             </li>
             <li>My Wishlist</li>
             <li>
-                <Link to="/my-orders">My Orders</Link>
+                <Link to="/my-orders" onClick={onClose}>My Orders</Link>
             </li>
             <li>My Addresses</li>
           </ul>

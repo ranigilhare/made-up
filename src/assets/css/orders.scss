@@ -1,11 +1,6 @@
-
 /* Order styles */
 .order-section {
   flex: 1;
-  // padding: 40px 30px;
-  // border: 1px solid #000;
-  margin-bottom: 50px;
-
   h2 {
     font-size: 1.5rem;
     margin-bottom: 30px;
@@ -35,9 +30,13 @@
   .order-card {
     display: flex;
     background: #fff;
-    padding: 15px 15px 0px 15px;
+    padding-top: 20px;
     align-items: center;
     gap: 20px;
+    @media (max-width: 500px) {
+      padding: 15px 0px 0px 0px !important;
+      gap: 10px;
+    }
 
     img {
       width: 80px;
@@ -45,6 +44,9 @@
       border-radius: 1px;
       @media (max-width: 769px) {
         width: 70px;
+      }
+      @media (max-width: 500px) {
+        width: 60px;
       }
     }
 
@@ -58,21 +60,38 @@
 
       .title {
         font-weight: 600;
-        margin: 5px 0;
+        margin: 0 0 5px 0;
       }
 
       .delivery {
         font-size: 0.9rem;
         color: #666;
       }
-      @media (max-width: 769px) {
-        font-size: smaller;
+      p {
+        @media (max-width: 769px) {
+          font-size: 12px !important;
+        }
       }
     }
 
     .order-payment {
       text-align: right;
-
+      @media (min-width: 500px) {
+        .chevron-mobile {
+          display: none !important;
+        }
+        .chevron-desktop {
+          display: block !important;
+        }
+      }
+      @media (max-width: 500px) {
+        .chevron-mobile {
+          display: block !important;
+        }
+        .chevron-desktop {
+          display: none !important;
+        }
+      }
       .payment {
         font-size: 0.85rem;
         color: #888;
@@ -81,9 +100,11 @@
       .price {
         font-size: 1.2rem;
         font-weight: bold;
-        margin: 5px 0;
-        @media (max-width: 769px) {
-          font-size: 1em;
+      }
+       
+      p {
+        @media (max-width: 500px) {
+          font-size: 12px !important;
         }
       }
     }
@@ -93,6 +114,6 @@
   }
 
   @media (max-width: 769px) {
-    padding: 40px 10px !important;
+    padding: 0 !important;
   }
 }
