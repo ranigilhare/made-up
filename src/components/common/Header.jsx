@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../../assets/images/icons/logo.png';
-import UserAccount from '../../assets/images/icons/user-account.svg';
-import Cart from '../../assets/images/icons/shopping-cart.svg';
-import SearchIcon from '../../assets/images/icons/search.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AccountMenuModal from '../modals/AccountMenuModal';
+
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <header className='shadow'>
         <div className="container px-5">
@@ -15,32 +17,58 @@ const Header = () => {
                 <Navbar.Brand href="/">
                     <img src={Logo} alt="" width={100}/>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                <Nav
-                    className="ms-auto me-lg-auto my-2 my-lg-0 d-flex gap-1 gap-lg-4"
-                    navbarScroll
-                >
-                    <Nav.Link href="#action1">For Me</Nav.Link>
-                    <Nav.Link href="#action2">Jeans</Nav.Link>
-                    <Nav.Link href="#action2">Shirts</Nav.Link>
-                    <Nav.Link href="#action2">T-Shirts</Nav.Link>
-                    <Nav.Link href="#action2">Trousers</Nav.Link>
-                    <Nav.Link href="#action2">Joggers</Nav.Link>
-                    <Nav.Link href="#action2">Shorts</Nav.Link>
-                </Nav>
-                <div className="nav-right d-flex gap-2 justify-content-center">
-                    <Link to="" className='ms-3'>
-                        <img src={SearchIcon} alt="" width={25} height={25} />
+
+                {/* Icons: show in small screens */}
+                <div className="nav-icons-mobile d-flex d-lg-none align-items-center ms-auto me-2 gap-3">
+                    <Link to="" className="me-2">
+                    <FontAwesomeIcon icon="search" />
                     </Link>
-                    <Link to="" className='ms-2'>
-                        <img src={Cart} alt="" width={23} height={23} />
+                    <Link to="" className="me-2">
+                    <FontAwesomeIcon icon="shopping-cart" />
                     </Link>
-                    <Link to="/my-profile" className='ms-3'>
-                        <img src={UserAccount} alt="" width={18} height={18} />
-                    </Link>
+
+                    <button
+                        className="btn p-0 border-0 bg-transparent d-lg-none"
+                        onClick={() => {
+                            console.log("Clicked menu icon");
+                             setIsModalOpen(true);
+                        }}
+                        >
+                        <FontAwesomeIcon icon="bars" size="lg" />
+                    </button>
+                <AccountMenuModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
                 </div>
                 
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="ms-auto me-lg-auto my-2 my-lg-0 d-flex gap-1 gap-lg-4"
+                        
+                    >
+                        <Nav.Link href="#action1">For Me</Nav.Link>
+                        <Nav.Link href="#action2">Jeans</Nav.Link>
+                        <Nav.Link href="#action2">Shirts</Nav.Link>
+                        <Nav.Link href="#action2">T-Shirts</Nav.Link>
+                        <Nav.Link href="#action2">Trousers</Nav.Link>
+                        <Nav.Link href="#action2">Joggers</Nav.Link>
+                        <Nav.Link href="#action2">Shorts</Nav.Link>
+                    </Nav>
+                    <div className="nav-right d-flex gap-2 justify-content-center">
+                        <Link to="" className='ms-3'>
+                            <FontAwesomeIcon icon="search"  className="ms-auto"/>
+                        </Link>
+                        <Link to="" className='ms-2'>
+                            <FontAwesomeIcon icon="shopping-cart"  className="ms-auto"/>
+                        </Link>
+                        <Link to="" className='ms-2'>
+                            <FontAwesomeIcon icon="heart"  className="ms-auto"/>
+                        </Link>
+                        <Link to="" className='ms-2' onClick={() => setIsModalOpen(true)} >
+                            <FontAwesomeIcon icon="user"  className="ms-auto"/>
+                        </Link>
+                    </div>
+                    <AccountMenuModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                    
                 </Navbar.Collapse>
             </Navbar>
         </div>

@@ -1,18 +1,19 @@
 import React from 'react'
 import Layout from '../common/Layout'
-import Hero from '../common/Hero'
 import HeroOneImage from '../../assets/images/shop-items/hero-one.jfif'
 import HeroTwoImage from '../../assets/images/shop-items/hero-two.jfif'
 import NewsletterImage from '../../assets/images/shop-items/jacket-one.jfif'
-import LocationImage from '../../assets/images/icons/location.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LatestCollection from './LatestCollection'
 import Testimonials from './Testimonials'
+import ItemCategoryCarousel from './ItemCategoryCarousel'
 
 const Home = () => {
   return (
     <>
         <Layout>
-          <div className='container g-0'>
+          <div className='container-fluid g-0'>
+            <ItemCategoryCarousel/>
             <section className='hero'>
               <div className='row g-0 mb-2 position-relative' style={{
                 backgroundImage: `url(${HeroOneImage})`,
@@ -102,7 +103,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className='d-flex position-absolute location-content'>
-                  <img src={LocationImage} alt="" />
+                  <FontAwesomeIcon icon="location-dot"  className="ms-auto p-1 text-white self-align-center"/>
                   <span className='text-white text-uppercase'>Locate Us</span>
                 </div>
               </div>

@@ -1,24 +1,43 @@
 import React from "react";
-import Layout from "../common/Layout";
-import { Link } from "react-router-dom";
+import MyAccount from "./MyAccount";
+import '../../assets/css/profile.scss';
 
 const MyProfile = () => {
     return (
         <>
-            <Layout>
-                <div className="container profile-details">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <nav aria-label="breadcrumb" className="py-4">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li className="breadcrumb-item" aria-current="page"><Link to="/my-profile">My Profile</Link></li>
-                                </ol>
-                            </nav>
+            {/* <MyAccount> */}
+                <main className="profile-section">
+                    <h2>My Profile</h2>
+                    <form className="profile-form">
+                        <div className="form-row d-flex gap-3 mb-3">
+                            <input type="text" placeholder="First name" className="form-control" />
+                            <input type="text" placeholder="Last name" className="form-control" />
                         </div>
-                    </div>
-                </div>
-            </Layout>
+
+                        <div className="mb-3">
+                            <input type="email" placeholder="Email" className="form-control" />
+                        </div>
+
+                        <div className="mb-3">
+                            <input type="tel" placeholder="Phone number" className="form-control" />
+                        </div>
+
+                        <div className="mb-3">
+                            <input type="password" placeholder="Password" className="form-control" />
+                        </div>
+
+                        <div className="mb-3">
+                            <input type="password" placeholder="Confirm Password" className="form-control" />
+                        </div>
+
+                        <div className="text-end mt-5">
+                            <button type="button" className="btn btn-dark px-4 py-2">
+                                ADD NEW ADDRESS
+                            </button>
+                        </div>
+                    </form>
+                </main>
+            {/* </MyAccount> */}
         </>
     )
 } 
